@@ -6,4 +6,6 @@ def validar_password(pwd):
         errores.append("Al menos una letra mayúscula")
     if not any(c.islower() for c in pwd):
         errores.append("Al menos una letra minúscula")
+    if not any(c.isdigit() for c in pwd):
+        errores.append("Al menos un dígito")
     return {"valida": len(errores) == 0, "errores": errores}
